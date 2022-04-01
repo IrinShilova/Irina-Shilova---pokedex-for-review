@@ -1,9 +1,22 @@
+
+  
 import React from "react";
 
-
-function CaughtPokemon(props) {
-    //const date = new Date().toLocaleDateString();
-    return <p> Caught 0 Pokemon on {props.date} </p>;
-  }
+const CaughtPokemon = (props) => {
+  console.log(props);
+  return (
+    <div>
+      <p>
+        Caught {props.caught.length} Pokemon on {props.date}
+      </p>
+      <button onClick={props.func}>Catch Pokemon</button>
+      <ul>
+        {props.caught.map((item, index) => {
+          return <li key={index}>{item}</li>;
+        })}
+      </ul>
+    </div>
+  );
+};
 
 export default CaughtPokemon;
