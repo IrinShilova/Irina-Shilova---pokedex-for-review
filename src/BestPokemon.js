@@ -1,17 +1,28 @@
 import React from "react";
+const RenderListItem = (props) => {
+  return <li>{props.ability}</li>;
+};
 
-function BestPokemon(props) {
-  //const abilities = ['Anticipation', 'Adaptability', 'Run-Away'];
+const BestPokemon = () => {
+  const abilities = [
+    { skill: "Anticipation", id: 556 },
+    { skill: "Adaptability", id: 557 },
+    { skill: "Run-Away", id: 558 },
+  ];
   return (
     <div>
-      <p>My favourite Pokemon is Squirtle</p>
+      <p>My favorite Pokemon is Squirtle</p>
       <ul>
-        {props.abilities.map((e) => (
-          <li>{e}</li>
-        ))}
+        {abilities.map((abilityObject) => {
+          return (
+            <RenderListItem
+              key={abilityObject.id}
+              ability={abilityObject.skill}
+            />
+          );
+        })}
       </ul>
     </div>
   );
-}
-
+};
 export default BestPokemon;
