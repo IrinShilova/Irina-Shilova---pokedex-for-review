@@ -20,7 +20,7 @@ const BestPokemon = () => {
               ability={abilityObject.skill}
             />
           );
-        })}
+        })}\
       </ul>
     </div>
   );

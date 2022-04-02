@@ -3,22 +3,19 @@ import Logo from "./Logo.js";
 import BestPokemon from "./BestPokemon.js";
 import CaughtPokemon from "./CaughtPokemon.js";
 import PokemonNames from "./PokemonNames.json";
-//import ReactDOM from "react-dom";
+import PokemonMovesSelector from "./PokemonMovesSelector.js";
+import PokemonCity from "./PokemonCity.js";
 
 function App() {
   const [caught, setCaught] = useState([]);
 
-   function catchPokemon() {
-     setCaught(
-       caught.concat(
-         PokemonNames[Math.floor(Math.random() * PokemonNames.length)]
-       )
-     );
-   }
-  // function catchPokemon() {
-  //   setCount((c1) => {
-  //     return c1 + 1;
-  //   });
+  function catchPokemon() {
+    setCaught(
+      caught.concat(
+        PokemonNames[Math.floor(Math.random() * PokemonNames.length)]
+      )
+    );
+  }
 
   return (
     <div className="App">
@@ -29,6 +26,8 @@ function App() {
         func={catchPokemon}
         caught={caught}
       />
+      <PokemonMovesSelector />
+      <PokemonCity />
     </div>
   );
 }
